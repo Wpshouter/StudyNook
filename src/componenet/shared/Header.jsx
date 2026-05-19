@@ -66,7 +66,7 @@ const Header = () => {
                     { isPending ? <span className="loading loading-spinner text-success"></span> :
                         (session) ? 
                         <div className='flex gap-3 items-center'>   
-                        <button onClick={async () => {  await authClient.signOut() }} className='btn btn-primary hidden md:flex'>
+                        <button onClick={async () => {  await authClient.signOut() }} className='btn bg-blue-500 text-white shadow-sm border-1 hidden md:flex'>
                         <SlLogout className='text-[20px]'/>
                             Logout
                         </button>
@@ -79,9 +79,9 @@ const Header = () => {
                         Login
                     </Link>
 
-                    <Link className='btn bg-blue-500 text-white hidden md:flex' href="/Register">
+                    <Link className='btn bg-blue-500 text-white hidden md:flex' href="/Signup">
                      <SiGnuprivacyguard className='text-[20px]' ></SiGnuprivacyguard>
-                        Register
+                        Sign Up
                     </Link>
                     </>
                     } 
