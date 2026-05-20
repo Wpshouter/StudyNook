@@ -16,6 +16,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// app/layout.jsx or app/layout.tsx
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+});
 export const metadata = {
   title: "StudyNook – Library Study Room Booking",
   description: "StudyNook is a plateform where students and library users can list study rooms they control",
@@ -25,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html data-theme="light"
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${manrope.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children} 

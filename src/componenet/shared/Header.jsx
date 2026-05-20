@@ -19,13 +19,27 @@ const Header = () => {
             <li>
                 <NavLink href="/Rooms" className="p-1  text-md  pb-0">Rooms</NavLink>
             </li>
+            
             {
-                 (session) &&     <li className='md:hidden'>
+                 (session) ?     
+                 <>
+                   <li>
+                <NavLink href="/AddRoom" className="text-left text-md p-1 pb-0">Add Room</NavLink>  
+            </li>
+            <li>
+                <NavLink href="/MyListing" className="p-1  text-md  pb-0">My Listings</NavLink>
+            </li>
+
+               <li>
+                <NavLink href="/MyBooking" className="p-1  text-md  pb-0">My Bookings</NavLink>
+            </li>
+
+                 <li className='md:hidden'>
                   <button onClick={async () => {  await authClient.signOut() }} className=''>
                         <SlLogout className='text-[20px]'/>
                             Logout
                         </button>
-            </li>
+                </li> </> : ''
             }
           
             </>
