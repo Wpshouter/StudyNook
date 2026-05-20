@@ -28,7 +28,7 @@ const NewBanner = () => {
           <p className="py-6 text-gray-100">
            Browse and book quiet, private study rooms in your library. List your own room and earn.
           </p>
-          <button className="our_custom_button"> <span class="text">Explore Rooms</span></button>
+          <button className="our_custom_button"> <span>Explore Rooms</span></button>
         </div>
       </div>
     </section>

@@ -6,7 +6,9 @@
 .btn-primary {
   @apply bg-primary text-white hover:bg-blue-600;
 }
-
+.checkbox-primary{
+  
+}
 .our_custom_button {
   align-items: center;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
@@ -51,4 +53,12 @@
 
 .our_custom_button:active {
   transform: scale(0.9);
+}
+.textfield input,.textfield textarea{
+  width: 100% !important;
+}
+@media screen and (max-width:550px) {
+  .hide_in_mobile{
+    display: none !important;
+  }
 }

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const RoomCard = ({room}) => {
@@ -78,9 +79,9 @@ const RoomCard = ({room}) => {
                 </h3>
             </div>
 
-            <button className="btn bg-blue-600 hover:bg-blue-700 text-white border-none px-6">
+            <Link href={`/Room/${room._id}`}><button className="btn bg-blue-600 hover:bg-blue-700 text-white border-none px-6">
                 View Details
-            </button>
+            </button></Link> 
 
         </div>
 

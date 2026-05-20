@@ -69,7 +69,7 @@ const loginpage = () => {
               
         </div> 
                   <Form className="flex w-96 flex-col gap-4" onSubmit={handle_submit_login} >
-      <TextField
+      <TextField className={`w-full`}
         isRequired
         name="email"
         type="email"
