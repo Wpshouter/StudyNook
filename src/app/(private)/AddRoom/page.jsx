@@ -8,12 +8,13 @@ import { Check } from '@gravity-ui/icons';
 import { Button, Checkbox, CheckboxGroup, Description, FieldError, Form, Input, Label, TextArea, TextField } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Bounce, toast } from 'react-toastify';
 
 const page = () => {
+      const router = useRouter();
       console.log(`${process.env.NEXT_PUBLIC_BACKEND_URI}/rooms`, "URRRLRLRLRL");
    const [amenities, setAmenities] = useState([]);
     const { data: session, isPending } =  authClient.useSession();
@@ -72,7 +73,7 @@ const page = () => {
                     theme: "light",
                     transition: Bounce,
                     onClose: () => {
-                        //redirect('/MyListing');
+                     router.push('/MyListing');
                         // e.g. redirect, trigger API, update state
                     },
                 });
