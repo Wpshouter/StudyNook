@@ -91,7 +91,7 @@ const RoomDetails = async ({ session, room, roomOwner }) => {
       <div>
         <div className="sticky top-6 bg-base-100 rounded-md shadow-md p-6 border border-base-300">
           <h2 className="text-xl font-bold text-blue-600">Book This Room</h2>
-          {count && (
+          {count > 0 && (
             <p className="text-sm  my-3">
               Total Booked{" "}
               <span className="font-semibold text-lg mx-1 underline text-orange-500">
