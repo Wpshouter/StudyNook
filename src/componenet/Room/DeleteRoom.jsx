@@ -17,7 +17,7 @@ const DeleteRoom = ({ room }) => {
     //console.log(room);
           const {data:tokendata} = await authClient.token();
             //authorization : `Bearer ${tokendata?.token}`
-    const response = await fetch(`http://localhost:5000/rooms/${room._id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/rooms/${room._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

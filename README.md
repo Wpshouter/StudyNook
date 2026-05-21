@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📚 StudyNook
 
-## Getting Started
+StudyNook is a modern full-stack study room booking platform where students and library users can discover, manage, and book study rooms with real-time booking conflict prevention.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 https://study-nook-one.vercel.app/
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+- 🔐 Secure JWT Authentication using HTTP-only cookies
+- 🏢 Users can create, edit, and delete their own study room listings
+- 📅 Smart booking system with automatic overlapping booking prevention
+- 🔎 Search and filter rooms by room name and amenities
+- 👤 Personalized dashboard for managing bookings and listings
+- ❌ Booking cancellation system with confirmation modal
+- 📱 Fully responsive modern UI for mobile, tablet, and desktop
+- ⚡ Fast full-stack architecture using Next.js, Express.js, and MongoDB
+- 🎯 Protected private routes for authenticated users
+- 📊 Dynamic booking statistics and room management system
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- DaisyUI
+- HeroUI
+- React Toastify
 
-## Deploy on Vercel
+### Backend
+- Express.js
+- MongoDB
+- JWT
+- CORS
+- dotenv
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔑 Main Functionalities
+
+### 🏢 Room Management
+- Add new study rooms
+- Edit room details
+- Delete owned rooms
+- Add room amenities
+- Upload room image URLs
+
+### 📅 Booking System
+- Book rooms by date and time slot
+- Automatic booking conflict detection
+- View personal bookings
+- Cancel upcoming bookings
+- Real-time total booking cost calculation
+
+### 🔎 Search & Filtering
+Users can:
+- Search rooms by room name
+- Filter rooms by amenities like:
+  - Wi-Fi
+  - Projector
+  - Whiteboard
+  - Quiet Zone
+  - Air Conditioning
+  - Power Outlets
+
+---
+

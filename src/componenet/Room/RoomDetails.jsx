@@ -4,7 +4,7 @@ import OwnerActionRoowm from "./OwnerActionRoowm";
 import Link from "next/link";
 
 const RoomDetails = async ({ session, room, roomOwner }) => {
-  //http://localhost:5000/bookings/count/6a0e27d38ff9a8c1794bb642
+  
   console.log(
     `${process.env.NEXT_PUBLIC_BACKEND_URI}/bookings/count${room?._id}`,
   );
