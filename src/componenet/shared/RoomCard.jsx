@@ -42,13 +42,13 @@ const RoomCard = ({room}) => {
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 leading-relaxed mt-2 line-clamp-3">
+        <p className="text-base-content/90 leading-relaxed mt-2 line-clamp-3">
             {room.description}
         </p>
 
         {/* Amenities */}
         <div className="mt-4">
-            <h3 className="font-semibold text-gray-800 mb-3">
+            <h3 className="font-semibold text-base-content/90  mb-3">
                 Amenities
             </h3>
 

@@ -65,7 +65,7 @@ const RoomDetails = async ({ session, room, roomOwner }) => {
             <div className="mt-4">
               <h2 className="text-xl font-semibold mb-4">About This Room</h2>
 
-              <p className="text-gray-600 leading-8 text-lg">
+              <p className="text-base-content/90 leading-8 text-lg">
                 {room.description}
               </p>
             </div>

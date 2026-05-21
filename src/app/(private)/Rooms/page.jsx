@@ -65,7 +65,13 @@ const page = async ({ searchParams }) => {
         <div className="bg-base-200 min-h-screen py-8">
 
             <div className="container mx-auto px-4">
-
+                    {
+                data_result.length === 0 && (
+                    <h3 className='p-4 my-3 text-xl'>
+                        No Room Available
+                    </h3>
+                )
+            }
                 {/* Filter Section */}
                 <div className="bg-base-100 rounded-2xl shadow-md p-5 mb-8">
 

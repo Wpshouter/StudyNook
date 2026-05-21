@@ -7,7 +7,9 @@ const MainLayout = ({children}) => {
     return (
         <>
             <Header />
-            {children}
+            <div className=' mt-21'>
+                   {children}
+         </div>
             <Footer/>
         </>
     );
