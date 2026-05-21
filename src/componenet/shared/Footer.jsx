@@ -6,8 +6,9 @@ import { IoLogoLinkedin } from 'react-icons/io';
 
 const Footer = () => {
     return (
-       <footer className="footer gap-2 footer-horizontal footer-center bg-orange-500/50 rounded p-10 border-1 border-gray-100 pt-10">
-  <nav className="grid grid-flow-col gap-2 underline my-3">
+       <footer className="footer gap-2 footer-horizontal footer-center bg-orange-500/10 rounded p-10 border-1 border-gray-100 pt-10">
+        <div className='w-full flex flex-col justify-center gap-0'>
+            <nav className="grid grid-flow-col gap-2 underline my-3">
     <Link className="link link-hover" href="/">Home</Link>
     <Link className="link link-hover" href="/Rooms">Rooms</Link>
     <a href="#" className="link link-hover">About</a>
@@ -28,6 +29,8 @@ const Footer = () => {
       </a>
     </div>
   </nav>
+        </div>
+
   <p className=''>smjaber24@hotmail.com</p>
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by StudyNook</p>
