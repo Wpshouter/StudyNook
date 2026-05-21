@@ -3,6 +3,7 @@ import React from 'react';
 import { FaFacebook, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { IoLogoLinkedin } from 'react-icons/io';
+import DarkLightToggle from './DarkLightToggle';
 
 const Footer = () => {
     return (
@@ -30,7 +31,7 @@ const Footer = () => {
     </div>
   </nav>
         </div>
-
+      <DarkLightToggle />
   <p className=''>smjaber24@hotmail.com</p>
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by StudyNook</p>

@@ -44,7 +44,7 @@ const Header = () => {
           
             </>
   return (
-    <div className="max-lg:collapse shadow-sm w-full px-0 lg:px-10 bg-white border-b pb-2 pt-1 border-gray-700">
+    <div className="max-lg:collapse shadow-sm w-full px-0 lg:px-10 bg-base-100 border-b pb-2 pt-1 border-gray-700">
       <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
       <label
         htmlFor="navbar-1-toggle"

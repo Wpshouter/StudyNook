@@ -10,7 +10,7 @@ const NavLink = ({href, children, className}) => {
     const isActive = href === pathName;
     let clasessss = ' ';
     if(pathName === '/'){
-           clasessss += 'lg:text-gray-900 '; 
+           clasessss += ' '; 
     }
     return (
         <Link className={`${isActive ? " text-blue-500 border-b pb-1/50" : `${clasessss}`} ${className} rounded-0 font-bold text-md ` } href={href}>
