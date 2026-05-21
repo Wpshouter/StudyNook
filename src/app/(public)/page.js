@@ -1,6 +1,6 @@
 import Image from "next/image";
 export const metadata = {
-  title: 'StudyStudyNook – Home',
+  title: 'StudyNook – Home',
 }
 import NewBanner from "@/componenet/Homepage/NewBanner";
 import HomeExtraSections from "@/componenet/Homepage/HomeExtraSections";

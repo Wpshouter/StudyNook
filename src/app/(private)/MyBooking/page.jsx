@@ -3,7 +3,7 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import React from 'react';
 export const metadata = {
-  title: 'StudyStudyNook – My Bookings',
+  title: 'StudyNook – My Bookings',
 }
 const page = async() => {
      const session = await auth.api.getSession({

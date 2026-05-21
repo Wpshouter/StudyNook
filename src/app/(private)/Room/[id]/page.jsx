@@ -4,7 +4,7 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import React from 'react';
 export const metadata = {
-  title: 'StudyStudyNook – Room',
+  title: 'StudyNook – Room',
 }
 const page = async ({params} ) => {
     //const params = useParams();

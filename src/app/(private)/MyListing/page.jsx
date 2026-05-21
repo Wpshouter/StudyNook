@@ -2,7 +2,7 @@ import RoomCard from "@/componenet/shared/RoomCard";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 export const metadata = {
-  title: 'StudyStudyNook – My Details',
+  title: 'StudyNook – My Details',
 }
 
 const page = async() => {
