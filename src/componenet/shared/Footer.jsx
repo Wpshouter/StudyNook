@@ -31,7 +31,7 @@ const Footer = () => {
     </div>
   </nav>
         </div>
-      <DarkLightToggle />
+ 
   <p className=''>smjaber24@hotmail.com</p>
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by StudyNook</p>

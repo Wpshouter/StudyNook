@@ -77,13 +77,13 @@ const signup = () => {
       }
 
   return (
-    <div className='flex items-center justify-center h-screen bg-base-200'>
+    <div className='flex items-center justify-center h-screen bg-base-200 w-full px-5'>
       <div className="bg-base-100 py-5 px-5 rounded-md shadow-md">
         <div className="pb-10 mx-auto flex justify-center">
           <Link href="/">  <Image src="/log.png" width={200} height={100} alt="logo" /></Link>
               
         </div>
-                  <Form className="flex w-96 flex-col gap-4" onSubmit={handleSubmit} >
+                  <Form className="flex flex-col gap-4" onSubmit={handleSubmit} >
                           <TextField
         isRequired
         name="name"

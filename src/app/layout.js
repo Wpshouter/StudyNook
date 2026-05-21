@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 
 // app/layout.jsx or app/layout.tsx
 import { Manrope } from "next/font/google";
+import DarkLightToggle from '@/componenet/shared/DarkLightToggle';
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         {children} 
         <ToastContainer />
+             <DarkLightToggle />
       </body>
         
 
