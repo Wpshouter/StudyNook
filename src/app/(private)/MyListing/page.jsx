@@ -24,7 +24,8 @@ const page = async() => {
     const data_result = await res.json();
     console.log(data_result, "data_result");
     return (
-        <div className="container mx-auto p-5 md:p-0 bg-base-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className=" bg-base-200">
+        <div className="container mx-auto p-5  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {
                 data_result.length === 0 && (
                     <h3 className='p-4 my-3 text-xl'>
@@ -36,6 +37,7 @@ const page = async() => {
             {data_result.map(data => 
                 <RoomCard key={data._id} room={data} />
             )}
+        </div>
         </div>
     );
 };

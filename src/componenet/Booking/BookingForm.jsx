@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingPage from "@/app/loading";
 import { authClient } from "@/lib/auth-client";
 import { useMemo, useState } from "react";
 import { TiTick } from "react-icons/ti";
@@ -9,7 +10,7 @@ export default function BookingForm({ room }) {
        const { data: session, isPending } =  authClient.useSession();
         console.log(session?.user);
         const user_id = session?.user?.id;
-
+      const [loading, setLoading] =  useState(false);
   const hourlyRate = Number(room.hourly_rate);
 
   const timeSlots = [
@@ -58,7 +59,7 @@ export default function BookingForm({ room }) {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
+    setLoading(true);
     const bookingData = {
       room_id: room._id,
       booking_date: date,
@@ -83,6 +84,7 @@ export default function BookingForm({ room }) {
     const data_result = await res.json();
     console.log(data_result, "data");
         if(data_result.insertedId){
+          setLoading(false);
                  toast.success('🦄 Booking Successfull!', {
                     position: "top-center",
                     autoClose: 1000,
@@ -101,6 +103,7 @@ export default function BookingForm({ room }) {
 
         }
         else{
+          setLoading(false);
              toast.error(`${data_result?.message}`, {
                                 position: "top-center",
                                 autoClose: 2500,
@@ -115,7 +118,11 @@ export default function BookingForm({ room }) {
         }
 
   };
-
+  if (loading) {
+        return (
+          <LoadingPage/>
+        );
+      }
   return (
     <div className="">
       {/* Header */}
