@@ -7,7 +7,7 @@ import DarkLightToggle from './DarkLightToggle';
 
 const Footer = () => {
     return (
-       <footer className="footer gap-2 footer-horizontal footer-center bg-orange-500/10 rounded p-10 border-1 border-gray-100 pt-10">
+       <footer className="footer gap-2 footer-horizontal footer-center bg-orange-500/10 rounded p-10  pt-10">
         <div className='w-full flex flex-col justify-center gap-0'>
             <nav className="grid grid-flow-col gap-2 underline my-3">
     <Link className="link link-hover" href="/">Home</Link>
