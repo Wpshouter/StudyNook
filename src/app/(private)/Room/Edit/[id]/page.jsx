@@ -2,7 +2,9 @@ import EditRoomForm from '@/componenet/EditRoom/EditRoomForm';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import React from 'react';
-
+export const metadata = {
+  title: 'StudyStudyNook – Edit Room',
+}
 const page = async({params}) => {
       //const params = useParams();
             const { id } = await params;

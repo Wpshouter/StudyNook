@@ -3,7 +3,9 @@ import RoomDetails from '@/componenet/Room/RoomDetails';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import React from 'react';
-
+export const metadata = {
+  title: 'StudyStudyNook – Room',
+}
 const page = async ({params} ) => {
     //const params = useParams();
     const { id } = await params;
@@ -22,7 +24,7 @@ const page = async ({params} ) => {
     //console.log(data);
     return(
             <div className='bg-base-200'>
-            <RoomDetails roomOwner={userId} room={room} />
+            <RoomDetails session={session} roomOwner={userId} room={room} />
          </div>
     );
 };

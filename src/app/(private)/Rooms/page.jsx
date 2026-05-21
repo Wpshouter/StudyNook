@@ -1,6 +1,8 @@
 import RoomCard from '@/componenet/shared/RoomCard';
 import React from 'react';
-
+export const metadata = {
+  title: 'StudyStudyNook – All Rooms',
+}
 const page = async() => {
      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/rooms`);
     const data_result = await res.json();

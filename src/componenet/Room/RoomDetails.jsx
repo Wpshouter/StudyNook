@@ -1,8 +1,9 @@
 import React from 'react';
 import BookingForm from '../Booking/BookingForm';
 import OwnerActionRoowm from './OwnerActionRoowm';
+import Link from 'next/link';
 
-const RoomDetails = ({room, roomOwner}) => {
+const RoomDetails = ({session, room, roomOwner}) => {
     return (
    
          
@@ -109,7 +110,15 @@ const RoomDetails = ({room, roomOwner}) => {
                 <h2 className="text-xl font-bold text-blue-600">
                     Book This Room
                 </h2>
-                  <BookingForm room={room} />                
+                {
+                    (session?.user) ?  <BookingForm room={room} />  :    <Link href="/Login"><button
+          type="submit"
+          className="btn w-full bg-blue-600 hover:bg-blue-700 border-none text-white text-lg h-14 rounded-2xl my-3"
+        >
+          Login to Book
+        </button></Link>
+                }
+                               
       
 
             </div>

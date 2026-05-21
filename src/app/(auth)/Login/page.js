@@ -1,3 +1,4 @@
+
 'use client'
 import LoadingPage from '@/app/loading';
 import { authClient } from '@/lib/auth-client';
@@ -8,7 +9,6 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Bounce, toast } from 'react-toastify';
-
 const loginpage = () => {
     const [loading, setLoading] = useState(false);
     const handle_submit_login = async(event) => {
