@@ -2,7 +2,10 @@ import React from 'react';
 import RoomCard from '../shared/RoomCard';
 
 const DynamicFeaturedRoom = async() => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/featured-rooms`);
+    //const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/featured-rooms`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/featured-rooms`, {
+    next: { revalidate: 60 } 
+  });
     const feturedRoom = await res.json();
     console.log(feturedRoom, "_______________________");
 
