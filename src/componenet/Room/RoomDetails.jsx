@@ -3,7 +3,13 @@ import BookingForm from '../Booking/BookingForm';
 import OwnerActionRoowm from './OwnerActionRoowm';
 import Link from 'next/link';
 
-const RoomDetails = ({session, room, roomOwner}) => {
+const RoomDetails = async({session, room, roomOwner}) => {
+    //http://localhost:5000/bookings/count/6a0e27d38ff9a8c1794bb642
+   console.log(`${process.env.NEXT_PUBLIC_BACKEND_URI}/bookings/count${room?._id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/bookings/count/${room?._id}`);
+    const {count} = await res.json();
+
+
     return (
    
          
@@ -110,6 +116,9 @@ const RoomDetails = ({session, room, roomOwner}) => {
                 <h2 className="text-xl font-bold text-blue-600">
                     Book This Room
                 </h2>
+                {
+                    (count) && <p className='text-sm  my-3'>Total Booked <span className="font-semibold text-lg mx-1 underline text-orange-500">{count} </span>times</p>
+                }
                 {
                     (session?.user) ?  <BookingForm room={room} />  :    <Link href="/Login"><button
           type="submit"

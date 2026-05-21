@@ -1,9 +1,10 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
+import { Button } from '@heroui/react';
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 
-const GoogleLoginButton = () => {
+const GoogleLoginButton = ({setLoading}) => {
     const handle_google_login = async () => {
                 setLoading(true);
                 //return;
@@ -16,7 +17,7 @@ const GoogleLoginButton = () => {
         <>
            
 
-            <button onClick={()=>handle_google_login()} className='btn bg-[#FA3702] border-0 my-4 w-xs  text-white p-4'><FaGoogle/> Google Login</button>
+            <Button onClick={()=>handle_google_login()} className='btn bg-red-500 w-full text-base-100 mt-6 rounded-3xl'><FaGoogle/> Continue with google</Button>
         </>
         
     );

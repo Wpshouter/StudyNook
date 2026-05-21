@@ -14,12 +14,14 @@ const BookingCancelModal = ({ booking }) => {
   const handleCancelBooking = async (bookingId) => {
    
     console.log(bookingId, "bookingid");
+           const {data:tokendata} = await authClient.token();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URI}/bookings/${bookingId._id}/cancel`,
       {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+                authorization : `Bearer ${tokendata?.token}`
         },
         body: JSON.stringify({
           user_id,

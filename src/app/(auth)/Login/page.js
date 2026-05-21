@@ -1,6 +1,7 @@
 
 'use client'
 import LoadingPage from '@/app/loading';
+import GoogleLoginButton from '@/componenet/shared/GoogleLoginButton';
 import { authClient } from '@/lib/auth-client';
 import { Check } from '@gravity-ui/icons';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
@@ -108,16 +109,14 @@ const loginpage = () => {
         <FieldError />
       </TextField>
       <div className="flex gap-2">
-        <Button type="submit">
+        <Button type="submit" className="w-full bg-blue-600">
           <Check />
-          Submit
-        </Button>
-        <Button type="reset" variant="secondary">
-          Reset
+          Log in
         </Button>
       </div>
     </Form>
-     <div className="flex flex-col mt-8 gap-2 justify-center  text-primary"><Link className="underline" href="/Signup">Dont't have an account? SignUp</Link>
+    <GoogleLoginButton setLoading={setLoading} />
+     <div className="flex flex-col mt-5 gap-2 justify-center  text-primary"><Link className="underline" href="/Signup">Dont't have an account? SignUp</Link>
             <Link className="underline text-right flex items-center justify-end gap-2" href="/"> <FaHome/>Home</Link>
             </div>
       

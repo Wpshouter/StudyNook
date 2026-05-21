@@ -2,6 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import { useMemo, useState } from "react";
+import { TiTick } from "react-icons/ti";
 import { Bounce, toast } from "react-toastify";
 
 export default function BookingForm({ room }) {
@@ -69,11 +70,13 @@ export default function BookingForm({ room }) {
       status: 'Confirmed'
     };
 
-    console.log(bookingData);
+    //console.log(bookingData);
+           const {data:tokendata} = await authClient.token();
        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/bookings`, {
       method: 'POST',
       headers: {
-        'content-type' : 'application/json'
+        'content-type' : 'application/json',
+        authorization : `Bearer ${tokendata?.token}`
       },
       body:JSON.stringify(bookingData)
     })
@@ -252,9 +255,9 @@ export default function BookingForm({ room }) {
         {/* CTA */}
         <button
           type="submit"
-          className="btn w-full bg-blue-600 hover:bg-blue-700 border-none text-white text-lg h-14 rounded-2xl"
+          className="btn w-full bg-blue-600 shadow-md hover:bg-blue-700 border-none text-white text-lg h-14 rounded-md"
         >
-          Confirm Booking
+          <TiTick/>  Confirm Booking
         </button>
       </form>
     </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 
 import React from "react";
+import { MdDeleteOutline } from "react-icons/md";
 import { Bounce, toast } from "react-toastify";
 
 const DeleteRoom = ({ room }) => {
@@ -13,11 +14,14 @@ const DeleteRoom = ({ room }) => {
   const user_id = session?.user?.id;
 
   const handleDeleteRoom = async (room) => {
-    console.log(room);
+    //console.log(room);
+          const {data:tokendata} = await authClient.token();
+            //authorization : `Bearer ${tokendata?.token}`
     const response = await fetch(`http://localhost:5000/rooms/${room._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        authorization : `Bearer ${tokendata?.token}`
       },
       body: JSON.stringify({
         user_id,
@@ -51,7 +55,7 @@ const DeleteRoom = ({ room }) => {
           document.getElementById(`cancel_modal_${room._id}`).showModal()
         }
       >
-        Delete
+        <MdDeleteOutline/>  Delete
       </button>
 
       <dialog id={`cancel_modal_${room._id}`} className="modal">

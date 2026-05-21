@@ -45,11 +45,13 @@ const EditRoomForm = ({room}) => {
         room_id: room?._id
     }
     console.log(roomData, "roomdata");
-
+       const {data:tokendata} = await authClient.token();
+        //authorization : `Bearer ${tokendata?.token}`
      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/rooms/${room?._id}/edit/`, {
         method: "PATCH",
       headers: {
-        'content-type' : 'application/json'
+        'content-type' : 'application/json',
+        authorization : `Bearer ${tokendata?.token}`
       },
       body:JSON.stringify(roomData)
     })
@@ -106,11 +108,11 @@ const EditRoomForm = ({room}) => {
       }
       
     return (
-        <div className='flex items-center justify-center h-screen bg-base-200'>
-      <div className="bg-base-100 py-5 px-5 rounded-md shadow-md">
+       <div className='flex py-5 items-center justify-center  bg-base-200 w-full'>
+           <div className="bg-base-100 my-10 md:my-0  py-5 px-5 rounded-md shadow-md">
         <p className='py-4'>You are editing room as <span className='text-primary underline'>{name}</span></p>
         <h1 className='text-xl text-primary border-b mb-4 border-primary'>Edit Room</h1>
-                  <Form className="flex w-5xl flex-col gap-4" onSubmit={handleSubmit} >
+                      <Form className="flex w-full flex-col gap-4" onSubmit={handleSubmit} >
 
       <TextField
             isRequired
@@ -148,45 +150,53 @@ const EditRoomForm = ({room}) => {
         <FieldError />
       </TextField >
 
-        <TextField
-            isRequired
-            name="floor"
-            type="number"
-              defaultValue={room?.floor}
-          >
 
-        <Label>Floor</Label>
-        <Input placeholder="" />
-        <Description>Example: 3</Description>
-        <FieldError />
-      </TextField >
+       <div className='flex items-center gap-3 flex-col md:flex-row w-full'>
+              <TextField
+                  isRequired
+                  name="floor"
+                  type="number"
+                  className='w-full md:w-1/3'
+                                defaultValue={room?.floor}
+                >
+      
+              <Label>Floor</Label>
+              <Input placeholder="" />
+              <Description>Example: 3</Description>
+              <FieldError />
+            </TextField >
+      
+      
+                  <TextField
+                  isRequired
+                  name="capacity"
+                  type="number"
+                  className='w-full md:w-1/3'
+                                defaultValue={room?.capacity}
+                >
+      
+              <Label>Capacity</Label>
+              <Input placeholder="" />
+              <Description>Number of person</Description>
+              <FieldError />
+            </TextField >
+      
+             <TextField
+                  isRequired
+                  name="hourly_rate"
+                  type="number"
+                  className='w-full md:w-1/3'
+                                defaultValue={room?.hourly_rate}
+                >
+      
+              <Label>Hourly Rate (USD)</Label>
+              <Input placeholder="" />
+              <Description>Example: 10</Description>
+              <FieldError />
+            </TextField >
+            </div>
 
 
-            <TextField
-            isRequired
-            name="capacity"
-            type="number"
-              defaultValue={room?.capacity}
-          >
-
-        <Label>Capacity</Label>
-        <Input placeholder="" />
-        <Description>Number of person</Description>
-        <FieldError />
-      </TextField >
-
-       <TextField
-            isRequired
-            name="hourly_rate"
-            type="number"
-              defaultValue={room?.hourly_rate}
-          >
-
-        <Label>Hourly Rate (USD)</Label>
-        <Input placeholder="" />
-        <Description>Example: 10</Description>
-        <FieldError />
-      </TextField >
        <AmenitiesForm defaultamenities={room?.amenities} setAmenities={setAmenities} />
      
       <div className="flex gap-2">

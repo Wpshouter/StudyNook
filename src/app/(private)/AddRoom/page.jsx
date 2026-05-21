@@ -48,12 +48,15 @@ const page = () => {
         amenities,
         user_id: session?.user?.id
     }
-    console.log(roomData, "roomdata");
-
+    //console.log(roomData, "roomdata");
+    const {data:tokendata} = await authClient.token();
+    //authorization : `Bearer ${tokendata?.token}`
     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/rooms`, {
       method: 'POST',
       headers: {
-        'content-type' : 'application/json'
+        'content-type' : 'application/json',
+        authorization : `Bearer ${tokendata?.token}`
+
       },
       body:JSON.stringify(roomData)
     })
@@ -106,11 +109,11 @@ const page = () => {
       }
       
     return (
-        <div className='flex items-center justify-center h-screen bg-base-200'>
-      <div className="bg-base-100 py-5 px-5 rounded-md shadow-md">
+        <div className='flex py-5 items-center justify-center  bg-base-200'>
+      <div className="bg-base-100 my-10 md:my-0  py-5 px-5 rounded-md shadow-md">
         <p className='py-4'>You are adding room as <span className='text-primary underline'>{name}</span></p>
         <h1 className='text-xl text-primary border-b mb-4 border-primary'>Add A Room</h1>
-                  <Form className="flex w-5xl flex-col gap-4" onSubmit={handleSubmit} >
+                  <Form className="flex w-full flex-col gap-4" onSubmit={handleSubmit} >
 
       <TextField
             isRequired
@@ -144,11 +147,12 @@ const page = () => {
         <Input placeholder="image url" />
         <FieldError />
       </TextField >
-
+        <div className='flex items-center gap-3 flex-col md:flex-row w-full'>
         <TextField
             isRequired
             name="floor"
             type="number"
+            className='w-full md:w-1/3'
           >
 
         <Label>Floor</Label>
@@ -162,6 +166,7 @@ const page = () => {
             isRequired
             name="capacity"
             type="number"
+            className='w-full md:w-1/3'
           >
 
         <Label>Capacity</Label>
@@ -174,6 +179,7 @@ const page = () => {
             isRequired
             name="hourly_rate"
             type="number"
+            className='w-full md:w-1/3'
           >
 
         <Label>Hourly Rate (USD)</Label>
@@ -181,10 +187,12 @@ const page = () => {
         <Description>Example: 10</Description>
         <FieldError />
       </TextField >
+      </div>
        <AmenitiesForm setAmenities={setAmenities} />
      
       <div className="flex gap-2">
-        <Button className={`bg-blue-500`} type="submit">
+        <Button className={`bg-blue-600 max-w-200 hover:bg-blue-300 hover:text-black 
+           my-3 rounded-md`} type="submit">
           <Check />
           Add Room
         </Button>

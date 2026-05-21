@@ -23,7 +23,7 @@ const page = async ({params} ) => {
 
     //console.log(data);
     return(
-            <div className='bg-base-200'>
+            <div className='bg-base-200 p-5 md:p-0'>
             <RoomDetails session={session} roomOwner={userId} room={room} />
          </div>
     );

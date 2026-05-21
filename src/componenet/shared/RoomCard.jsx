@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
+import { FaRegEye } from 'react-icons/fa';
 
 const RoomCard = ({room}) => {
     return (
-        <div className="card bg-base-100 shadow-xl border border-base-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
+        <div className="card p-0 bg-base-100 shadow-xl border border-base-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
 
     {/* Image */}
     <figure className="relative h-60 overflow-hidden">
@@ -80,7 +81,7 @@ const RoomCard = ({room}) => {
             </div>
 
             <Link href={`/Room/${room._id}`}><button className="btn bg-blue-600 hover:bg-blue-700 text-white border-none px-6">
-                View Details
+                <FaRegEye/> View Details
             </button></Link> 
 
         </div>

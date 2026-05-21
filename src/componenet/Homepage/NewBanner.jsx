@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const NewBanner = () => {
@@ -15,7 +16,7 @@ const NewBanner = () => {
         <img
           src="/banner-2.jpg"
           alt="Study room preview"
-          className="max-w-md rounded-lg shadow-2xl"
+          className="hidden md:block md:max-w-md rounded-lg shadow-2xl"
         />
  {/* <div className="max-w-[6/12] rounded-lg shadow-2xl">  <Image src="/banner-2.jpg" fill className='' ></Image></div> */}
       
@@ -28,7 +29,7 @@ const NewBanner = () => {
           <p className="py-6 text-gray-100">
            Browse and book quiet, private study rooms in your library. List your own room and earn.
           </p>
-          <button className="our_custom_button"> <span>Explore Rooms</span></button>
+          <Link href="/Rooms"><button className="our_custom_button"> <span>Explore Rooms</span></button></Link>
         </div>
       </div>
     </section>

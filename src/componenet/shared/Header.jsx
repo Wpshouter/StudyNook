@@ -68,7 +68,7 @@ const Header = () => {
               />
             </svg>
           </label>
-          <Image src="/log.png" width={200} height={100} />
+          <Link href="/"><Image src="/studyNook.png" width={200} height={100} /></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -88,7 +88,7 @@ const Header = () => {
                     </div>
                     :
                     <>
-                         <Link className='btn btn-primary  bg-orange-500 border-[#FDAB03] text-black hover:bg-orange-500' href="/Login">
+                         <Link className='btn btn-primary  bg-orange-500  text-black hover:bg-orange-500' href="/Login">
                     <FiLogIn className='text-[20px]'/>
                         Login
                     </Link>
