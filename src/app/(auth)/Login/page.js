@@ -66,7 +66,7 @@ const loginpage = () => {
               <div className='flex items-center justify-center h-screen bg-base-200 w-full px-5'>
       <div className="bg-base-100 py-5 px-5 rounded-md shadow-md">
         <div className="pb-10 mx-auto flex justify-center">
-          <Link href="/">  <Image src="/log.png" width={200} height={100} alt="logo" /></Link>
+           <Link href="/"><Image src="/studyNook.png" width={200} height={100} /></Link>
               
         </div> 
                   <Form className="flex  flex-col gap-4" onSubmit={handle_submit_login} >
